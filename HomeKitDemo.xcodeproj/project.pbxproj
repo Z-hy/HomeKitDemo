@@ -12,6 +12,8 @@
 		CE67DF7B1E9643C70034288C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE67DF791E9643C70034288C /* Main.storyboard */; };
 		CE67DF7D1E9643C70034288C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE67DF7C1E9643C70034288C /* Assets.xcassets */; };
 		CE67DF801E9643C70034288C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE67DF7E1E9643C70034288C /* LaunchScreen.storyboard */; };
+		CE67DF8A1E9643CE0034288C /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE67DF891E9643CE0034288C /* HomeKit.framework */; };
+		CE67DF8C1E9645E30034288C /* MyHomeKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67DF8B1E9645E30034288C /* MyHomeKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,9 @@
 		CE67DF7C1E9643C70034288C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE67DF7F1E9643C70034288C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE67DF811E9643C70034288C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE67DF871E9643CE0034288C /* HomeKitDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HomeKitDemo.entitlements; sourceTree = "<group>"; };
+		CE67DF891E9643CE0034288C /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+		CE67DF8B1E9645E30034288C /* MyHomeKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyHomeKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE67DF8A1E9643CE0034288C /* HomeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +46,7 @@
 			children = (
 				CE67DF741E9643C70034288C /* HomeKitDemo */,
 				CE67DF731E9643C70034288C /* Products */,
+				CE67DF881E9643CE0034288C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +61,24 @@
 		CE67DF741E9643C70034288C /* HomeKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CE67DF871E9643CE0034288C /* HomeKitDemo.entitlements */,
 				CE67DF751E9643C70034288C /* AppDelegate.swift */,
 				CE67DF771E9643C70034288C /* ViewController.swift */,
+				CE67DF8B1E9645E30034288C /* MyHomeKit.swift */,
 				CE67DF791E9643C70034288C /* Main.storyboard */,
 				CE67DF7C1E9643C70034288C /* Assets.xcassets */,
 				CE67DF7E1E9643C70034288C /* LaunchScreen.storyboard */,
 				CE67DF811E9643C70034288C /* Info.plist */,
 			);
 			path = HomeKitDemo;
+			sourceTree = "<group>";
+		};
+		CE67DF881E9643CE0034288C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE67DF891E9643CE0034288C /* HomeKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,6 +115,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = Y8HTQSGD6V;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HomeKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -139,6 +161,7 @@
 			files = (
 				CE67DF781E9643C70034288C /* ViewController.swift in Sources */,
 				CE67DF761E9643C70034288C /* AppDelegate.swift in Sources */,
+				CE67DF8C1E9645E30034288C /* MyHomeKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +282,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HomeKitDemo/HomeKitDemo.entitlements;
 				DEVELOPMENT_TEAM = Y8HTQSGD6V;
 				INFOPLIST_FILE = HomeKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -272,6 +296,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HomeKitDemo/HomeKitDemo.entitlements;
 				DEVELOPMENT_TEAM = Y8HTQSGD6V;
 				INFOPLIST_FILE = HomeKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
